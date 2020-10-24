@@ -18,11 +18,11 @@ async function run() {
         });
 
         // Instrumentation Event to monitor consumer heartbeat
-        const { HEARTBEAT } = consumer.events;
-        const removeListener = consumer.on(HEARTBEAT, (e) =>
-          console.log(`heartbeat -----------> at ${e.payload.groupId}`)
-        );
-        console.log(removeListener);
+        // const { HEARTBEAT } = consumer.events;
+        // const removeListener = consumer.on(HEARTBEAT, (e) =>
+        //   console.log(`heartbeat -----------> at ${e.payload.groupId}`)
+        // );
+        // console.log(removeListener);
 
         console.log('connecting...');
         await consumer.connect();
