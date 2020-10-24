@@ -17,6 +17,12 @@ async function run() {
           groupId: 'test',
         });
 
+        const { REQUEST } = consumer.events;
+        const removeListener = consumer.on(REQUEST, (e) =>
+          console.log(`REQUEST duration -----------> at ${e.payload.duration}`)
+        );
+        console.log(removeListener);
+
         // Instrumentation Event to monitor consumer heartbeat
         // const { HEARTBEAT } = consumer.events;
         // const removeListener = consumer.on(HEARTBEAT, (e) =>
@@ -33,12 +39,6 @@ async function run() {
           fromBeginning: true,
         });
 
-        // const { REQUEST_QUEUE_SIZE } = consumer.events;
-        // const removeListener = consumer.on(REQUEST_QUEUE_SIZE, (e) =>
-        //   console.log(`queue size -----------> at ${e.timestamp}`)
-        // );
-        // console.log(removeListener);
-
         await consumer.run({
           eachMessage: async (result) => {
             console.log(
@@ -49,5 +49,5 @@ async function run() {
       } catch (err) {
     console.log(`ERROR: ${err}`);
   } finally {
-            }
+  }
 }
