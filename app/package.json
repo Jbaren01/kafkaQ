@@ -14,5 +14,9 @@
     "postinstall": "yarn electron-rebuild"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@coreui/coreui": "^3.3.0",
+    "@coreui/icons-react": "^1.0.2",
+    "@coreui/react": "^3.3.1"
+  }
 }
