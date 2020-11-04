@@ -5,6 +5,8 @@ import * as actions from '../actions/actions';
 
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
+import { Navbar } from 'react-bootstrap';
+import SidebarDash from './SidebarDash';
 
 const mapStateToProps = (state) => ({
   // Producer state
@@ -47,17 +49,21 @@ class Dashboard extends Component {
     } = this.props;
 
     return (
-      <div className="dashboard">
-        <ProducerMetrics
-          dataSize={producerDataSize}
-          processingTime={producerProcessingTimeInMilliseconds}
-          pendingDuration={producerPendingDuration}
-        />
-        <ConsumerMetrics
-          dataSize={consumerDataSize}
-          processingTime={consumerProcessingTimeInMilliseconds}
-          pendingDuration={consumerPendingDuration}
-        />
+      //place core ui nav bar here
+      <div>
+        <SidebarDash />
+        {/* <div className="dashboard">
+          <ProducerMetrics
+            dataSize={producerDataSize}
+            processingTime={producerProcessingTimeInMilliseconds}
+            pendingDuration={producerPendingDuration}
+          />
+          <ConsumerMetrics
+            dataSize={consumerDataSize}
+            processingTime={consumerProcessingTimeInMilliseconds}
+            pendingDuration={consumerPendingDuration}
+          />
+        </div> */}
       </div>
     );
   }
