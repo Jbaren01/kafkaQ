@@ -71,10 +71,7 @@ $dim-white: #d1d1d2;
 }
 
 .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   font-style: poppins;
   background-color: $box-background-color;
   height: 60px;
@@ -111,10 +108,10 @@ $dim-white: #d1d1d2;
   flex-direction: column;
 }
 
-.dashTitle {
-  background-color: orange;
-  border: 10px solid blueviolet;
-}
+// .dashTitle {
+//   background-color: orange;
+//   border: 10px solid blueviolet;
+// }
 
 .metrics-container {
   // @include flexCenter();
@@ -127,10 +124,6 @@ $dim-white: #d1d1d2;
   margin-left: 10px;
   flex-direction: row;
   justify-content: left;
-
-  #firstMetric {
-    border-radius: 5px 5px 0px 0px;
-  }
 }
 
 .mainDashboard {
